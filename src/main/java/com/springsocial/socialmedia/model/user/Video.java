@@ -1,4 +1,4 @@
-package com.springsocial.socialmedia.model;
+package com.springsocial.socialmedia.model.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,18 +6,18 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
-public class Image {
+public class Video {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne()
+    @ManyToOne
     private User user;
 
-    private String imageUrl;
+    private String videoUrl;
 }

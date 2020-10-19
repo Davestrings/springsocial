@@ -1,6 +1,7 @@
-package com.springsocial.socialmedia.model;
+package com.springsocial.socialmedia.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.springsocial.socialmedia.model.post.Post;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -54,6 +55,13 @@ public class User {
 
     private String bannerImage;
 
-    private Video video;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Video> allVideos;
+
+    @OneToMany
+    private List<Friend> friends;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Post> posts;
 
 }

@@ -1,4 +1,4 @@
-package com.springsocial.socialmedia.model;
+package com.springsocial.socialmedia.model.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
